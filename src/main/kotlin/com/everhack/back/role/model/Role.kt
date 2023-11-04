@@ -8,11 +8,11 @@ open class Role {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id", nullable = false)
-  var id: Long? = null
-
+  open var id: Long? = null
+  open lateinit var title: String
   @OneToOne
   @JoinColumn(name = "parent_id")
-  var parent: Role? = null
-  var current: Boolean = false
-  var blocked: Boolean = false
+  open var parent: Role? = null
+  open var current: Boolean = false
+  open var blocked: Boolean = false
 }
