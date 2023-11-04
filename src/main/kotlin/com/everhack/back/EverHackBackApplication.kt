@@ -1,4 +1,4 @@
-package com.ever.everhackback
+package com.everhack.back
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class EverHackBackApplication
 
 fun main(args: Array<String>) {
-    runApplication<EverHackBackApplication>(*args)
+  runApplication<EverHackBackApplication>(*args)
 }
