@@ -18,6 +18,6 @@ open class Curriculum {
   open lateinit var name: String
   open var description: String? = null
 
-  @OneToMany(mappedBy = "curriculum")
+  @OneToMany(mappedBy = "curriculum", fetch = FetchType.EAGER, cascade = [CascadeType.ALL], orphanRemoval = true)
   open var elements: MutableList<CurriculumElement> = mutableListOf()
 }
