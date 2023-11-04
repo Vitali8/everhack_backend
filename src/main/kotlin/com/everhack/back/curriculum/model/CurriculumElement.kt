@@ -22,6 +22,7 @@ abstract class CurriculumElement {
 
   var position: Int = -1
 
+  @Enumerated(EnumType.STRING)
   var status: CurriculumElementStatus = CurriculumElementStatus.DRAFT
 
   lateinit var title: String
