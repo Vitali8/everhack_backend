@@ -1,1 +1,2 @@
-
+application:
+  trainual-url: https://api.trainual-stg.com/backend/v1
