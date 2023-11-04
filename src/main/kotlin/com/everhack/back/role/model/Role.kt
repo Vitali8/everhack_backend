@@ -10,9 +10,11 @@ open class Role {
   @Column(name = "id", nullable = false)
   open var id: Long? = null
   open lateinit var title: String
-  @OneToOne
+  @ManyToOne
   @JoinColumn(name = "parent_id")
   open var parent: Role? = null
   open var current: Boolean = false
   open var blocked: Boolean = false
+  @OneToMany(mappedBy = "parent")
+  open var children: MutableList<Role>? = null
 }

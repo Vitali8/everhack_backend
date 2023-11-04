@@ -11,4 +11,5 @@ data class RoleDto(
   val current: Boolean = false,
   val blocked: Boolean = false,
   val title: String,
+  val children: List<RoleDto>?
 ) : Serializable
