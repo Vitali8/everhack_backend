@@ -7,7 +7,7 @@ import jakarta.persistence.OneToMany
 
 @Entity
 @DiscriminatorValue("COURSE")
-class Course : CurriculumElement() {
+open class Course : CurriculumElement() {
   @OneToMany(fetch = FetchType.EAGER, mappedBy = "course")
-  var steps: MutableList<CourseStep> = mutableListOf()
+  open var steps: MutableList<CourseStep> = mutableListOf()
 }

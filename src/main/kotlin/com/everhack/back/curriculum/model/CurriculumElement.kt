@@ -10,20 +10,20 @@ abstract class CurriculumElement {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id", nullable = false)
-  var id: Long? = null
+  open var id: Long? = null
 
   @ManyToOne
   @JoinColumn(name = "curriculum_id")
-  lateinit var curriculum: Curriculum
+  open lateinit var curriculum: Curriculum
 
   @Column(name = "type", insertable = false, updatable = false)
   @Enumerated(EnumType.STRING)
-  lateinit var type: CurriculumElementType
+  open lateinit var type: CurriculumElementType
 
-  var position: Int = -1
+  open var position: Int = -1
 
   @Enumerated(EnumType.STRING)
-  var status: CurriculumElementStatus = CurriculumElementStatus.DRAFT
+  open var status: CurriculumElementStatus = CurriculumElementStatus.DRAFT
 
-  lateinit var title: String
+  open lateinit var title: String
 }

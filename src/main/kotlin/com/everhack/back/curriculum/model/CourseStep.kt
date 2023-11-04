@@ -14,5 +14,5 @@ open class CourseStep {
   @JoinColumn(name = "course_id")
   open var course: Course? = null
 
-  lateinit var title: String
+  open lateinit var title: String
 }

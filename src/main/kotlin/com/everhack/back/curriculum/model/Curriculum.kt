@@ -5,19 +5,19 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "curriculums")
-class Curriculum {
+open class Curriculum {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id", nullable = false)
-  var id: Long? = null
+  open var id: Long? = null
 
   @ManyToOne
   @JoinColumn(name = "role_id")
-  lateinit var role: Role
+  open lateinit var role: Role
 
-  lateinit var name: String
-  var description: String? = null
+  open lateinit var name: String
+  open var description: String? = null
 
   @OneToMany(mappedBy = "curriculum")
-  var elements: MutableList<CurriculumElement> = mutableListOf()
+  open var elements: MutableList<CurriculumElement> = mutableListOf()
 }
