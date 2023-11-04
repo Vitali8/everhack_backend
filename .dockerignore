@@ -1,0 +1,9 @@
+.m2/
+.mwn/
+mwnw*
+.local*
+/target
+!/target/*.jar
+/src/test
+.git*
+*.yml
