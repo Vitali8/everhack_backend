@@ -4,14 +4,14 @@ FROM roles
 WHERE title = 'Developer';
 
 INSERT INTO roles(title, parent_id, current, blocked)
-SELECT 'Ruby Architect', id, false, true
+SELECT 'Ruby Principal', id, false, true
 FROM roles
 WHERE title = 'Ruby';
 
 INSERT INTO roles(title, parent_id, current, blocked)
 SELECT 'Ruby Senior', id, false, true
 FROM roles
-WHERE title = 'Ruby Architect';
+WHERE title = 'Ruby Principal';
 
 INSERT INTO roles(title, parent_id, current, blocked)
 SELECT 'Ruby Middle', id, false, true
