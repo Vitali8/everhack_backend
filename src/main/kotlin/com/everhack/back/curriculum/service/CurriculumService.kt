@@ -2,6 +2,7 @@ package com.everhack.back.curriculum.service
 
 import com.everhack.back.curriculum.dto.CurriculumDto
 
-fun interface CurriculumService {
+interface CurriculumService {
+  fun getAll(): List<CurriculumDto>
   fun getCurriculumsByRoleId(roleId: Long): List<CurriculumDto>
 }

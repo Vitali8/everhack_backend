@@ -13,6 +13,9 @@ class CurriculumController(
   private val service: CurriculumService
 ) {
 
+  @GetMapping
+  fun getAllCurriculums(): List<CurriculumDto> = service.getAll()
+
   @GetMapping("/{roleId}")
   fun getRoleCurriculums(@PathVariable roleId: Long): List<CurriculumDto> = service.getCurriculumsByRoleId(roleId)
 }

@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service
 class CurriculumServiceImpl(
   private val repository: CurriculumRepository
 ) : CurriculumService {
+  override fun getAll(): List<CurriculumDto> = repository.findAll().map(CurriculumMapper::toDto)
+
   override fun getCurriculumsByRoleId(roleId: Long): List<CurriculumDto> =
     repository.findByRoleId(roleId).map(CurriculumMapper::toDto)
 }
