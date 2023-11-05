@@ -24,7 +24,7 @@ class RoleServiceImpl(private val repository: RoleRepository) : RoleService {
       parentId = parentId,
       current = role.current,
       blocked = role.blocked,
-      title = role.title,
+      name = role.title,
       children = children
     )
   }
