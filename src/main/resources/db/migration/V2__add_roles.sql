@@ -43,17 +43,17 @@ FROM roles
 WHERE title = 'Kotlin';
 
 INSERT INTO roles (title, parent_id, current, blocked)
-SELECT 'Kotlin Senior', id, false, true
+SELECT 'Kotlin Senior', id, false, false
 FROM roles
 WHERE title = 'Kotlin Principal';
 
 INSERT INTO roles (title, parent_id, current, blocked)
-SELECT 'Kotlin Middle', id, false, true
+SELECT 'Kotlin Middle', id, false, false
 FROM roles
 WHERE title = 'Kotlin Senior';
 
 INSERT INTO roles (title, parent_id, current, blocked)
-SELECT 'Kotlin Junior', id, false, false
+SELECT 'Kotlin Junior', id, false, true
 FROM roles
 WHERE title = 'Kotlin Middle';
 
