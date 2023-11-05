@@ -6,15 +6,17 @@ import com.everhack.back.career.mapper.ExtendedCurriculumMapper
 import com.everhack.back.career.service.CareerService
 import com.everhack.back.curriculum.model.CurriculumElementStatus
 import com.everhack.back.curriculum.service.CurriculumService
+import com.everhack.back.role.service.RoleService
 import org.springframework.stereotype.Service
 
 @Service
 class CareerServiceImpl(
-  private val curriculumService: CurriculumService
+  private val curriculumService: CurriculumService,
+  private val roleService: RoleService,
 ) : CareerService {
 
   override fun getCareerToRole(roleId: Long): CareerDto {
-    val currentRole = 5L //This is a hard code, in prod this value will be taken from the token
+    val currentRole = roleService.getCurrentRole()
     val currentRoleCurriculums = curriculumService.getCurriculumsByRoleId(currentRole)
     val wishedRoleCurriculums = curriculumService.getCurriculumsByRoleId(roleId)
 

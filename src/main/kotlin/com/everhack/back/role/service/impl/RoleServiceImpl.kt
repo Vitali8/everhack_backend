@@ -11,6 +11,10 @@ class RoleServiceImpl(private val repository: RoleRepository) : RoleService {
   override fun getAll(): List<RoleDto> =
     repository.findAll().map { mapToRoleDto(it) }
 
+  override fun getCurrentRole(): Long {
+    return repository.findByCurrentTrue()
+  }
+
   private fun mapToRoleDto(role: Role): RoleDto {
     val parentId = role.parent?.id
     val children = role.children?.map { mapToRoleDto(it) }
