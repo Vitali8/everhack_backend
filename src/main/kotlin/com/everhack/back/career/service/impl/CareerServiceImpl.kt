@@ -4,6 +4,7 @@ import com.everhack.back.career.dto.CareerDto
 import com.everhack.back.career.dto.ExtendedCurriculumDto
 import com.everhack.back.career.mapper.ExtendedCurriculumMapper
 import com.everhack.back.career.service.CareerService
+import com.everhack.back.curriculum.dto.CurriculumDto
 import com.everhack.back.curriculum.model.CurriculumElementStatus
 import com.everhack.back.curriculum.service.CurriculumService
 import com.everhack.back.role.service.RoleService
@@ -20,14 +21,10 @@ class CareerServiceImpl(
     val currentRoleCurriculums = curriculumService.getCurriculumsByRoleId(currentRole)
     val wishedRoleCurriculums = curriculumService.getCurriculumsByRoleId(roleId)
 
-    val currentCurriculumElements = currentRoleCurriculums.flatMap { it.elements }
-    wishedRoleCurriculums.forEach { wishedCurriculum ->
-      wishedCurriculum.elements.forEach { wishedElement ->
-        currentCurriculumElements.find { currentElement -> currentElement.id == wishedElement.id }
-          ?.let { foundElement ->
-            foundElement.status = CurriculumElementStatus.FINISHED
-          }
-      }
+    val currentCurriculumElements = currentRoleCurriculums.flatMap(CurriculumDto::elements)
+    wishedRoleCurriculums.flatMap(CurriculumDto::elements).forEach { wishedElement ->
+      currentCurriculumElements.find { currentElement -> currentElement.id == wishedElement.id }
+        ?.let { foundElement -> foundElement.status = CurriculumElementStatus.FINISHED }
     }
 
     val currentRoleExtendedCurriculum: List<ExtendedCurriculumDto> =
