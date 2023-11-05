@@ -15,6 +15,6 @@ open class Role {
   open var parent: Role? = null
   open var current: Boolean = false
   open var blocked: Boolean = false
-  @OneToMany(mappedBy = "parent")
+  @OneToMany(mappedBy = "parent", fetch = FetchType.EAGER)
   open var children: MutableList<Role>? = null
 }
