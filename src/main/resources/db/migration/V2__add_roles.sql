@@ -38,17 +38,17 @@ FROM roles
 WHERE title = 'Developer';
 
 INSERT INTO roles (title, parent_id, current, blocked)
-SELECT 'Kotlin Principal', id, false, false
+SELECT 'Kotlin Principal', id, false, true
 FROM roles
 WHERE title = 'Kotlin';
 
 INSERT INTO roles (title, parent_id, current, blocked)
-SELECT 'Kotlin Senior', id, false, false
+SELECT 'Kotlin Senior', id, false, true
 FROM roles
 WHERE title = 'Kotlin Principal';
 
 INSERT INTO roles (title, parent_id, current, blocked)
-SELECT 'Kotlin Middle', id, false, false
+SELECT 'Kotlin Middle', id, false, true
 FROM roles
 WHERE title = 'Kotlin Senior';
 
@@ -63,17 +63,17 @@ FROM roles
 WHERE title = 'Developer';
 
 INSERT INTO roles (title, parent_id, current, blocked)
-SELECT 'JavaScript Principal', id, false, false
+SELECT 'JavaScript Principal', id, false, true
 FROM roles
 WHERE title = 'JavaScript';
 
 INSERT INTO roles (title, parent_id, current, blocked)
-SELECT 'JavaScript Senior', id, false, false
+SELECT 'JavaScript Senior', id, false, true
 FROM roles
 WHERE title = 'JavaScript Principal';
 
 INSERT INTO roles (title, parent_id, current, blocked)
-SELECT 'JavaScript Middle', id, false, false
+SELECT 'JavaScript Middle', id, false, true
 FROM roles
 WHERE title = 'JavaScript Senior';
 
@@ -88,17 +88,17 @@ FROM roles
 WHERE title = 'IT Industry';
 
 INSERT INTO roles (title, parent_id, current, blocked)
-SELECT 'QA Principal', id, false, false
+SELECT 'QA Principal', id, false, true
 FROM roles
 WHERE title = 'QA';
 
 INSERT INTO roles (title, parent_id, current, blocked)
-SELECT 'QA Senior', id, false, false
+SELECT 'QA Senior', id, false, true
 FROM roles
 WHERE title = 'QA Principal';
 
 INSERT INTO roles (title, parent_id, current, blocked)
-SELECT 'QA Middle', id, false, false
+SELECT 'QA Middle', id, false, true
 FROM roles
 WHERE title = 'QA Senior';
 
