@@ -11,5 +11,5 @@ class CurriculumServiceImpl(
   private val repository: CurriculumRepository
 ) : CurriculumService {
   override fun getCurriculumsByRoleId(roleId: Long): List<CurriculumDto> =
-    repository.findByRole_Id(roleId).map(CurriculumMapper::toDto)
+    repository.findByRoleId(roleId).map(CurriculumMapper::toDto)
 }

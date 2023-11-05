@@ -11,7 +11,7 @@ data class CurriculumElementDto(
   val id: Long,
   val type: CurriculumElementType,
   val position: Int = -1,
-  val status: CurriculumElementStatus = CurriculumElementStatus.DRAFT,
+  var status: CurriculumElementStatus = CurriculumElementStatus.DRAFT,
   val title: String,
   val steps: List<CourseStepDto>? = null
 ) : Serializable
